@@ -6,17 +6,14 @@
         <div>
             <h1><a href="/">Django Test Landing</a></h1>
         </div>
-
-        <div>
-            <p>published: 6.01.2020, 22:22</p>
-            <h2><a href="">Item First</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        </div>
-
-        <div>
-            <p>published: 6.01.2020, 22:25</p>
-            <h2><a href="">Item Second</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
-        </div>
+        {% for item in items %}
+    		</div>
+				<h6>published: {{item.published_date}}</h6>
+        		<h1><a href="">{{item.title}}</a></h1>
+        		<p>{{item.description}}</p>
+        		<strong>price for item {{item.price}} $</strong>
+        		<p>{{item.text|linebreaksbr}}</p>
+    		</div>
+		{% endfor %}
     </body>
 </html>
